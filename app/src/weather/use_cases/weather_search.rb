@@ -32,6 +32,7 @@ module Weather
       private
 
       def validate_query(query)
+        # make sure we either have a zip code or a postal code
         self.location_factory.build_from_query(query)
       end
 
