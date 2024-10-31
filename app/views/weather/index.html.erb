@@ -1,0 +1,43 @@
+<h2>Get Today's Weather</h2>
+
+<% if @error %>
+  <h3><%= @error %></h3>
+<% end %>
+
+<% if @query.blank? %>
+  <div>
+    Enter a search term below to find the weather.
+  </div>
+  <br/>
+
+  <div>
+    You can use a city/state like "Bethesda, MD" or "Bethesda, Maryland" or "Washington, D.C."
+  </div>
+  <br/>
+
+  <div>
+    You can also use a US zip code like 20814
+  </div>
+  <br/><br/>
+<% end %>
+
+<% if @weather[:found_location] %>
+  <% if @weather[:found_location][:cached] %><h3><u>**This is Cached Result.</u></h3><% end %>
+  <h3>Location: <%= @weather[:found_location][:location_name] || "no location" %>
+  <h3>Current Temp: <%= @weather[:found_location][:current_temp] || "no current temp" %>
+  <h3>Today's High Temp: <%= @weather[:found_location][:high_temp] || "no high temp" %>
+  <h3>Today's Low Temp: <%= @weather[:found_location][:low_temp] || "no low temp" %>
+  <br/><br/>
+<% end %>
+
+<%= form_with method: :get do |form| %>
+  <%= form.label :query, "Get the weather for:" %><br/>
+  <%= form.text_field :query, placeholder: "zip code or city/state", value: @query %>
+  <%= form.submit "Search" %>
+<% end %>
+
+<br/><br/>
+
+<%= form_with method: :get do |form| %>
+  <%= form.submit "Reset" %>
+<% end %>
