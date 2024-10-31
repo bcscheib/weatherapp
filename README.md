@@ -23,6 +23,8 @@ or use the master key to decrypt and use current credentials.
 
 Otherwise, you will receive an error trying to get results.
 
+That error looks like `Woops, the API url for gathering data is bad or unreachable! Check the URL and API key.`
+
 ### Design
 
 Most of the app source is in an application boundary called `weather` available at
@@ -32,6 +34,9 @@ In order to maintain principle of least responsiblity we are adapting an
 interpretation of domain drive design DDD and using design patterns
 like factories and value objects as well as use cases, of which we only have one
 here since our data is used in one instance, a search.
+
+The main use case is `use_cases/weather_search.rb` which serves as the main entry point for our controller 
+`WeatherController#index` action.
 
 We are also set up such that we could implement other APIs or strategies later to show data by adding
 an IoC or some other pattern swapping the `WeatherAPICom` API for another API, such as Apple's.
