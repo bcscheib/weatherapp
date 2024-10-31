@@ -11,7 +11,7 @@ describe Weather::Services::WeatherApis::WeatherApiCom do
         allow(HTTParty).to receive(:get).and_return(mock_response)
         conditions = subject.search("memphis,tn")
 
-        expect(conditions).to eql({ city: "memphis", region: "tn", country: "us", current: "80", high: nil, low: nil})
+        expect(conditions).to eql({ city: "memphis", region: "tn", country: "us", current: "80", high: nil, low: nil })
         expect(HTTParty).to have_received(:get).once().with("http://api.weatherapi.com/v1/forecast.json?key=123&q=memphis,tn")
       end
 

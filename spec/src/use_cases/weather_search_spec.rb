@@ -21,7 +21,7 @@ describe Weather::UseCases::WeatherSearch do
             country: 'us',
             current: 10,
             high: 5,
-            low: 4,
+            low: 4
           }
         )
         report = subject.perform("20814")
@@ -33,7 +33,7 @@ describe Weather::UseCases::WeatherSearch do
               current_temp: "10F",
               high_temp: "5F",
               low_temp: "4F",
-              cached: false,
+              cached: false
             }
           }
         )
@@ -47,7 +47,7 @@ describe Weather::UseCases::WeatherSearch do
             country: 'us',
             current: 10,
             high: 5,
-            low: 4,
+            low: 4
           }
         )
         report = subject.perform("houston, tx")
@@ -59,7 +59,7 @@ describe Weather::UseCases::WeatherSearch do
               current_temp: "10F",
               high_temp: "5F",
               low_temp: "4F",
-              cached: false,
+              cached: false
             }
           }
         )
@@ -75,7 +75,7 @@ describe Weather::UseCases::WeatherSearch do
             country: 'us',
             current: 10,
             high: 5,
-            low: 4,
+            low: 4
           }
         )
 
@@ -88,7 +88,7 @@ describe Weather::UseCases::WeatherSearch do
               current_temp: "10F",
               high_temp: "5F",
               low_temp: "4F",
-              cached: false,
+              cached: false
             }
           }
         )
@@ -102,7 +102,7 @@ describe Weather::UseCases::WeatherSearch do
               current_temp: "10F",
               high_temp: "5F",
               low_temp: "4F",
-              cached: true,
+              cached: true
             }
           }
         )

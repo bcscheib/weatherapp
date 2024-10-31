@@ -18,7 +18,7 @@ module Weather
             current_temp: degree_as_temp(current_temp),
             high_temp: degree_as_temp(high_temp),
             low_temp: degree_as_temp(low_temp),
-            cached: cached,
+            cached: cached
           }
         }
       end

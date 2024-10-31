@@ -13,13 +13,13 @@ module Weather
       end
 
       def name
-        [city, region].compact.join(", ")
+        [ city, region ].compact.join(", ")
       end
 
       private
 
       def validate
-        raise Weather::Exceptions::BadLocation if [city, region, country, postal_code].none?
+        raise Weather::Exceptions::BadLocation if [ city, region, country, postal_code ].none?
       end
     end
   end

@@ -20,7 +20,7 @@ module Weather
         def search(query)
           # fix issue where Washington, D.C. isn't bringing up results
           # needs to be Washington, DC on this API
-          query = query.delete('.')
+          query = query.delete(".")
 
           response, body = get_response(query)
 
@@ -49,7 +49,7 @@ module Weather
             raise Weather::Exceptions::BadApiUrl
           end
 
-          [response, body]
+          [ response, body ]
         end
 
         def response_to_hash(response)
