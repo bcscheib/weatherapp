@@ -48,7 +48,7 @@ end
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "byebug", platform: :mri
-  gem "rspec-rails", "~> 3.5"
+  gem "rspec-rails", "~> 7.0"
   gem "capybara"
   gem "selenium-webdriver"
 end
